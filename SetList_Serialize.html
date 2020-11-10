@@ -31,6 +31,7 @@
 					songs = JSON.parse(result);
 					
 					msg = getSongs(songs);
+					alert(msg);
 					document.getElementById("data").innerHTML = msg;  
 				}
 				else if (request.readyState == 4 && request.status != 200) {
