@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<title>Messages</title>
+	<meta charset="utf-8"/>
+	<script>
+		function loadFile() {
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+
+ 
+			request.open("GET", "http://secretcheese.com/secretcheese.com/comp20hosting//Jessica_Nordlund/SetList.json", true);
+			console.log("2 - opened request file");
+ 
+
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+ 
+				if (request.readyState == 4 && request.status == 200) {
+					result = request.responseText;
+					alert(result);
+					songs = JSON.parse(result);
+					
+					//document.getElementById("data").innerHTML =strHTML;  
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+				}
+				else if (request.readyState == 3) {
+					document.getElementById("data").innerHTML = "Too soon!  Try again";
+				}
+
+			}
+
+			request.send();
+			console.log("4 - Request sent");
+		}
+	</script>
+</head>
+
+
+<body onload="loadFile()">
+
+	<h1>Set List</h1>
+	<div id="data">Loading...</div>
+</body>
+</html>
