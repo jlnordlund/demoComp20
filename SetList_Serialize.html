@@ -34,37 +34,37 @@
 					
 					//user friendly data
 					songs.forEach(function(song) {
-						msg += "<div id=" + song.artist.substring(0,4) + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
+						msg += "<div id=" + song.artist.substring(0,3) + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
 						songNum += 1;
 						if (song.genre[0] == "Pop") {
-							rockSongs.push(song.artist.substring(0,4));
-							soulSongs.push(song.artist.substring(0,4));
-							altSongs.push(song.artist.substring(0,4));
-							boSongs.push(song.artist.substring(0,4));
+							rockSongs.push(song.artist.substring(0,3));
+							soulSongs.push(song.artist.substring(0,3));
+							altSongs.push(song.artist.substring(0,3));
+							boSongs.push(song.artist.substring(0,3));
 						}
 						else if (song.genre[0] == "Rock"){
-							popSongs.push(song.artist.substring(0,4));
-							soulSongs.push(song.artist.substring(0,4));
-							altSongs.push(song.artist.substring(0,4));
-							boSongs.push(song.artist.substring(0,4));
+							popSongs.push(song.artist.substring(0,3));
+							soulSongs.push(song.artist.substring(0,3));
+							altSongs.push(song.artist.substring(0,3));
+							boSongs.push(song.artist.substring(0,3));
 						}
 						else if (song.genre[0] == "Soul"){
-							rockSongs.push(song.artist.substring(0,4));
-							popSongs.push(song.artist.substring(0,4));
-							altSongs.push(song.artist.substring(0,4));
-							boSongs.push(song.artist.substring(0,4));
+							rockSongs.push(song.artist.substring(0,3));
+							popSongs.push(song.artist.substring(0,3));
+							altSongs.push(song.artist.substring(0,3));
+							boSongs.push(song.artist.substring(0,3));
 						}
 						else if (song.genre[0] == "Mambo"){
-							rockSongs.push(song.artist.substring(0,4));
-							soulSongs.push(song.artist.substring(0,4));
-							altSongs.push(song.artist.substring(0,4));
-							popSongs.push(song.artist.substring(0,4));
+							rockSongs.push(song.artist.substring(0,3));
+							soulSongs.push(song.artist.substring(0,3));
+							altSongs.push(song.artist.substring(0,3));
+							popSongs.push(song.artist.substring(0,3));
 						}
 						else{
-							rockSongs.push(song.artist.substring(0,4));
-							soulSongs.push(song.artist.substring(0,4));
-							popSongs.push(song.artist.substring(0,4));
-							boSongs.push(song.artist.substring(0,4));
+							rockSongs.push(song.artist.substring(0,3));
+							soulSongs.push(song.artist.substring(0,3));
+							popSongs.push(song.artist.substring(0,3));
+							boSongs.push(song.artist.substring(0,3));
 						}
 					})
 					
