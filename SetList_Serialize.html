@@ -4,15 +4,6 @@
 	<title>Messages</title>
 	<meta charset="utf-8"/>
 	<script>
-		//get songs from JSON object songs
-		function getSongs(songs) {
-			msg = "";
-			for (var i; i < songs.size; i++) {
-				msg += songs[i]["title"] + "<br>";	
-			}
-			return msg;
-		}
-		
 		function loadFile() {
 			request = new XMLHttpRequest();
 			console.log("1 - request object created");
@@ -27,12 +18,12 @@
  
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
-					alert(result);
-					songs = JSON.parse(result);
+					songs  = JSON.parse(result);
 					
-					
-					//msg = getSongs(songs);
-					alert(songs);
+					songs.forEach(function(song) {
+						alert(song);
+					})
+					//alert(songs);
 					//document.getElementById("data").innerHTML = msg;  
 				}
 				else if (request.readyState == 4 && request.status != 200) {
