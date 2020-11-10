@@ -10,14 +10,6 @@
 	</style>
 	<script>
 		function loadFile() {
-			//event listener for form
-			filter = document.getElementById("filter");
-			//filter.addEventListener("click", displayGenre);
-			filter.onclick = function() {
-				alert("hello");
-				//genre = document.getElementById("genres").value;
-			}
-			
 			//AJAX stuff
 			request = new XMLHttpRequest();
 			console.log("1 - request object created");
@@ -44,6 +36,14 @@
 					//display both types of data
 					document.getElementById("data").innerHTML = result;  
 					document.getElementById("friendly").innerHTML = msg;
+					
+					//add event listener for form
+					filter = document.getElementById("filter");
+					filter.onclick = function(songs) {
+						alert("hello");
+						genre = document.getElementById("genres").value;
+						alert(genre);
+					}
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
