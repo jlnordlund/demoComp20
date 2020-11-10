@@ -24,7 +24,7 @@
 					//getting data
 					result = request.responseText;
 					songs  = JSON.parse(result);
-					msg    = "";
+					msg    = "<p>";
 					songNum   = 1;
 					popSongs  = [];
 					rockSongs = [];
@@ -34,7 +34,7 @@
 					
 					//user friendly data
 					songs.forEach(function(song) {
-						msg += "<p id='" + song.title + "'><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i></p>";
+						msg += "<div id='" + song.title + "'><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
 						songNum += 1;
 						if (song.genre[0] == "Pop") {
 							rockSongs.push(song.title);
@@ -67,6 +67,7 @@
 							boSongs.push(song.title);
 						}
 					})
+					msg += "</p>
 					
 					//display both types of data
 					document.getElementById("data").innerHTML = result;  
@@ -92,7 +93,7 @@
 						
 						for (var i = 0; i < array.length; i++) {
 							alert(array[i]);
-							//document.getElementById(array[i]).style.display = "none";
+							document.getElementById(array[i]).style.display = "none";
 						}
 					}
 				}
