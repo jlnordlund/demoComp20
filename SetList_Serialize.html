@@ -24,7 +24,7 @@
 					//getting data
 					result = request.responseText;
 					songs  = JSON.parse(result);
-					msg    = "<p>";
+					msg    = "";
 					songNum   = 1;
 					popSongs  = [];
 					rockSongs = [];
@@ -67,7 +67,7 @@
 							boSongs.push(song.title);
 						}
 					})
-					msg += "</p>";
+					
 					
 					//display both types of data
 					document.getElementById("data").innerHTML = result;  
@@ -93,7 +93,7 @@
 						
 						for (var i = 0; i < array.length; i++) {
 							alert(array[i]);
-							//document.getElementById(array[i]).style.display = "none";
+							document.getElementById(array[i]).style.display = "none";
 						}
 					}
 				}
