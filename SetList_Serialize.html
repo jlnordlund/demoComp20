@@ -34,37 +34,37 @@
 					
 					//user friendly data
 					songs.forEach(function(song) {
-						msg += "<div id=" + song.title + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
+						msg += "<div id=" + song.artist[:4] + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
 						songNum += 1;
 						if (song.genre[0] == "Pop") {
-							rockSongs.push(song.title);
-							soulSongs.push(song.title);
-							altSongs.push(song.title);
-							boSongs.push(song.title);
+							rockSongs.push(song.artist[0:4]);
+							soulSongs.push(song.artist[0:4]);
+							altSongs.push(song.artist[0:4]);
+							boSongs.push(song.artist[0:4]);
 						}
 						else if (song.genre[0] == "Rock"){
-							popSongs.push(song.title);
-							soulSongs.push(song.title);
-							altSongs.push(song.title);
-							boSongs.push(song.title);
+							popSongs.push(song.artist[0:4]);
+							soulSongs.push(song.artist[0:4]);
+							altSongs.push(song.artist[0:4]);
+							boSongs.push(song.artist[0:4]);
 						}
 						else if (song.genre[0] == "Soul"){
-							rockSongs.push(song.title);
-							popSongs.push(song.title);
-							altSongs.push(song.title);
-							boSongs.push(song.title);
+							rockSongs.push(song.artist[0:4]);
+							popSongs.push(song.artist[0:4]);
+							altSongs.push(song.artist[0:4]);
+							boSongs.push(song.artist[0:4]);
 						}
 						else if (song.genre[0] == "Mambo"){
-							rockSongs.push(song.title);
-							soulSongs.push(song.title);
-							altSongs.push(song.title);
-							popSongs.push(song.title);
+							rockSongs.push(song.artist[0:4]);
+							soulSongs.push(song.artist[0:4]);
+							altSongs.push(song.artist[0:4]);
+							popSongs.push(song.artist[0:4]);
 						}
 						else{
-							rockSongs.push(song.title);
-							soulSongs.push(song.title);
-							popSongs.push(song.title);
-							boSongs.push(song.title);
+							rockSongs.push(song.artist[0:4]);
+							soulSongs.push(song.artist[0:4]);
+							popSongs.push(song.artist[0:4]);
+							boSongs.push(song.artist[0:4]);
 						}
 					})
 					
