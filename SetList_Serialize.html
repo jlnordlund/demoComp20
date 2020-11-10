@@ -28,10 +28,11 @@
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					alert(result);
-					songs = JSON.parse(result);
+					//songs = JSON.parse(result);
+					song = JSON.parse(result[0]);
 					
-					msg = getSongs(songs);
-					alert(msg);
+					//msg = getSongs(songs);
+					alert(song);
 					document.getElementById("data").innerHTML = msg;  
 				}
 				else if (request.readyState == 4 && request.status != 200) {
