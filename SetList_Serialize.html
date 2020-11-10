@@ -22,7 +22,7 @@
 					msg    = "<ol>";
 					
 					songs.forEach(function(song) {
-						msg += "<li>" + song.title + "<br>" + song.artist + "<br>" + song.year + "<br>" + song.genre[0] + "</li>";
+						msg += "<li>" + song.title + "<br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br>" + song.year + "<br>" + "</li>";
 					})
 					msg += "</ol>";
 					document.getElementById("data").innerHTML = msg;  
