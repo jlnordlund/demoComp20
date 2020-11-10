@@ -25,12 +25,47 @@
 					result = request.responseText;
 					songs  = JSON.parse(result);
 					msg    = "";
-					songNum = 1;
+					songNum   = 1;
+					popSongs  = [];
+					rockSongs = [];
+					soulSongs = [];
+					altSongs  = [];
+					boSongs   = [];
 					
 					//user friendly data
 					songs.forEach(function(song) {
-						msg += "<p><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i></p>";
+						msg += "<p id='" + song.title + "'><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i></p>";
 						songNum += 1;
+						if (song.genre[0] == "Pop") {
+							rockSongs.push(song.title);
+							soulSongs.push(song.title);
+							altSongs.push(song.title);
+							boSongs.push(song.title);
+						}
+						else if (song.genre[0] == "Rock"){
+							popSongs.push(song.title);
+							soulSongs.push(song.title);
+							altSongs.push(song.title);
+							boSongs.push(song.title);
+						}
+						else if (song.genre[0] == "Soul"){
+							rockSongs.push(song.title);
+							popSongs.push(song.title);
+							altSongs.push(song.title);
+							boSongs.push(song.title);
+						}
+						else if (song.genre[0] == "Mambo"){
+							rockSongs.push(song.title);
+							soulSongs.push(song.title);
+							altSongs.push(song.title);
+							popSongs.push(song.title);
+						}
+						else{
+							rockSongs.push(song.title);
+							soulSongs.push(song.title);
+							popSongs.push(song.title);
+							boSongs.push(song.title);
+						}
 					})
 					
 					//display both types of data
@@ -42,11 +77,22 @@
 					filter.onclick = function(songs) {
 						msg   = "";
 						genre = document.getElementById("genres").value;
-						songs.forEach(function(song) {
-							if (song.genre[0] == genre)
-								msg += "<p><b>" + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i></p>";
-						})
-						document.getElementById("friendly").innerHTML = msg;
+						var array;
+						
+						if (genre == "Pop") 
+							array = popSongs;
+						else if (genre == "Rock")
+							array = rockSongs;
+						else if (genre == "Soul")
+							array = soulSongs;
+						else if (genre == "Mambo")
+							array = boSongs;
+						else
+							array = altSongs;
+						
+						for (var i = 0; i < array.length; i++) {
+							document.getElementById(array[i]).style.display = "none";
+						}
 					}
 				}
 				else if (request.readyState == 4 && request.status != 200) {
