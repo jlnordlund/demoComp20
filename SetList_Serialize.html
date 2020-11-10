@@ -26,6 +26,7 @@
 					songs  = JSON.parse(result);
 					msg    = "";
 					songNum   = 1;
+					//arrays to store songs that should NOT be shown when filter applied
 					popSongs  = [];
 					rockSongs = [];
 					soulSongs = [];
@@ -36,6 +37,8 @@
 					songs.forEach(function(song) {
 						msg += "<div id=" + song.artist.substring(0,3) + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
 						songNum += 1;
+						
+						//add song to other genre arrays (so NOT shown when filter applied)
 						if (song.genre[0] == "Pop") {
 							rockSongs.push(song.artist.substring(0,3));
 							soulSongs.push(song.artist.substring(0,3));
@@ -73,7 +76,7 @@
 					document.getElementById("data").innerHTML = result;  
 					document.getElementById("friendly").innerHTML = msg;
 					
-					//add event listener for form
+					//add event listener for filter
 					filter = document.getElementById("filter");
 					filter.onclick = function(songs) {
 						msg   = "";
@@ -92,7 +95,7 @@
 							array = altSongs;
 						
 						for (var i = 0; i < array.length; i++) {
-							//alert(array[i]);
+							//hide songs that are not of the current genre
 							document.getElementById(array[i]).style.display = "none";
 						}
 					}
