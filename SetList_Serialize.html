@@ -28,12 +28,12 @@
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					alert(result);
-					//songs = JSON.parse(result);
-					song = JSON.parse(result[0]);
+					songs = JSON.parse(result);
+					
 					
 					//msg = getSongs(songs);
-					alert(song);
-					document.getElementById("data").innerHTML = msg;  
+					alert(songs);
+					//document.getElementById("data").innerHTML = msg;  
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
