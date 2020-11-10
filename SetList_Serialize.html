@@ -34,7 +34,7 @@
 					
 					//user friendly data
 					songs.forEach(function(song) {
-						msg += "<div id='" + song.title + "'><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
+						msg += "<div id=" + song.title + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
 						songNum += 1;
 						if (song.genre[0] == "Pop") {
 							rockSongs.push(song.title);
@@ -92,7 +92,7 @@
 							array = altSongs;
 						
 						for (var i = 0; i < array.length; i++) {
-							//alert(array[i]);
+							alert(array[i]);
 							document.getElementById(array[i]).style.display = "none";
 						}
 					}
