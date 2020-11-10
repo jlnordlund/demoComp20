@@ -24,15 +24,16 @@
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					songs  = JSON.parse(result);
-					msg    = "<p>";
+					msg    = "";
 					songNum = 1;
 					
 					songs.forEach(function(song) {
-						msg += "<b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br>";
+						msg += "<p id=" + song.title + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i></p><br><br>";
 						songNum += 1;
 					})
-					msg += "</p>";
-					document.getElementById("data").innerHTML = msg;  
+					
+					document.getElementById("data").innerHTML = result;  
+					document.getElementById("friendly").innerHTML = msg;
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
@@ -46,6 +47,14 @@
 			request.send();
 			console.log("4 - Request sent");
 		}
+		function displayGenre() {
+			alert("hello");
+		}
+		window.onload() = function() {
+			alert("hi");
+			filter = document.getElementById("filter");
+			filter.addEventListener("onclick", displayGenre);
+		}
 	</script>
 </head>
 
@@ -54,6 +63,7 @@
 
 	<h1>Set List</h1>
 	<div id="data">Loading...</div>
+	<div id="friendly"></div>
 	<form>
 		<label for="genres">Filter by Genre:</label>
 		<select name="genres" id="genres">
