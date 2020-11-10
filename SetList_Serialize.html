@@ -16,7 +16,7 @@
 			//event listener for form
 			alert("hi");
 			filter = document.getElementById("filter");
-			filter.addEventListener("onclick", displayGenre);
+			filter.addEventListener("click", displayGenre);
 			
 			//AJAX stuff
 			request = new XMLHttpRequest();
@@ -76,7 +76,7 @@
 			<option value="alt">Alternative</option>
 		</select>
 		<br><br>
-		<input type="button" name="filter" id="filter" value="Filter">
+		<input type="button" id="filter" value="Filter">
 	</form>
 </body>
 </html>
