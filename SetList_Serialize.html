@@ -34,7 +34,7 @@
 					
 					//user friendly data
 					songs.forEach(function(song) {
-						msg += "<div id=" + song.artist[:4] + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
+						msg += "<div id=" + song.artist[0:4] + "><b>" + songNum + ". " + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br><br></div>";
 						songNum += 1;
 						if (song.genre[0] == "Pop") {
 							rockSongs.push(song.artist[0:4]);
