@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Messages</title>
+	<title>Set List</title>
 	<meta charset="utf-8"/>
 	<script>
 		function loadFile() {
@@ -19,12 +19,13 @@
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					songs  = JSON.parse(result);
+					msg    = "<ol>";
 					
 					songs.forEach(function(song) {
-						alert(song.title);
+						msg += "<li>" + song.title + "<br>" + song.artist + "</li>";
 					})
-					//alert(songs);
-					//document.getElementById("data").innerHTML = msg;  
+					msg += "</ol>";
+					document.getElementById("data").innerHTML = msg;  
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
