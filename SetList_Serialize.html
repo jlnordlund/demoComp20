@@ -9,14 +9,15 @@
 		}
 	</style>
 	<script>
-		function displayGenre() {
-			alert("hello");
-		}
 		function loadFile() {
 			//event listener for form
 			alert("hi");
 			filter = document.getElementById("filter");
-			filter.addEventListener("click", displayGenre);
+			//filter.addEventListener("click", displayGenre);
+			filter.onclick = function() {
+				alert("hello");
+				//genre = document.getElementById("genres").value;
+			}
 			
 			//AJAX stuff
 			request = new XMLHttpRequest();
@@ -69,11 +70,11 @@
 	<form>
 		<label for="genres">Filter by Genre:</label>
 		<select name="genres" id="genres">
-			<option value="pop">Pop</option>
-			<option value="rock">Rock</option>
-			<option value="soul">Soul</option>
-			<option value="mambo">Mambo</option>
-			<option value="alt">Alternative</option>
+			<option value="Pop">Pop</option>
+			<option value="Rock">Rock</option>
+			<option value="Soul">Soul</option>
+			<option value="Mambo">Mambo</option>
+			<option value="Alternative">Alternative</option>
 		</select>
 		<br><br>
 		<input type="button" id="filter" value="Filter">
