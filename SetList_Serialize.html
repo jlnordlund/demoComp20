@@ -4,7 +4,7 @@
 	<title>Set List</title>
 	<meta charset="utf-8"/>
 	<style>
-		li {
+		p {
 			text-align: center;
 		}
 	</style>
@@ -24,12 +24,13 @@
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					songs  = JSON.parse(result);
-					msg    = "<ol>";
+					msg    = "<p>";
+					songNum = 1;
 					
 					songs.forEach(function(song) {
-						msg += "<li><b>" + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br></li>";
+						msg += "<b>" + songNum + "." + song.title + "</b><br>Artist: " + song.artist + "<br>Genre: " + song.genre[0] + "<br><i>" + song.year + "</i><br>";
 					})
-					msg += "</ol>";
+					msg += "</p>";
 					document.getElementById("data").innerHTML = msg;  
 				}
 				else if (request.readyState == 4 && request.status != 200) {
