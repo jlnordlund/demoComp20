@@ -2,9 +2,9 @@
   "name": "helloapp",
   "version": "1.0.0",
   "description": "node app",
-  "main": "hello2.js",
+  "main": "readCSV.js",
   "scripts": {
-  "start": "node hello2.js"
+  "start": "node readCSV.js"
 },
   "repository": {
   "type": "git",
