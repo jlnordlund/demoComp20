@@ -1,14 +1,11 @@
-//const  csv  = require('csv-parser');
-//const  fs  = require('fs');
 const csv = require('csvtojson');
 const csvFilePath = 'companies-1.csv';
 const { MongoClient } = require("mongodb");
 
-// Replace the uri string with your MongoDB deployment's connection string.
-const uri =
+const url =
   "mongodb+srv://jess:beam55bam@cluster0.nvkau.mongodb.net/?retryWrites=true&w=majority";
 
-const client = new MongoClient(uri);
+const client = new MongoClient(url);
 
 async function run() {
   try {
@@ -18,9 +15,7 @@ async function run() {
     const database = client.db("stocks");
     const collection = database.collection("companies");
     const result = await collection.insert(array);
-    console.log(
-      `${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,
-    );
+    console.log("inserted");
   } finally {
     await client.close();
   }
