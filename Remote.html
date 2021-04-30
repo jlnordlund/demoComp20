@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<head> 
+  <meta charset="UTF-8">
+  <title>SwarmBot Remote Control</title>
+  <link rel="stylesheet" type="text/css" href="GoBeyond.css">
+</head>
+
+<h2><a href="GoBeyond.html" class="home">SwarmBot Web Control</a></h2>
+<section>
+    <div id="first">
+      <p id="pOne">Control your bot or allow it to track lanes!</p>
+    </div>
+    <div>
+      <nav>
+        <a href="./GoBeyond.html" class="navLinks">Home</a>
+        <a href="Remote.html" class="navLinks">Remote Control</a>
+         <a href="LineFollowing.html" class="navLinks">Line Following</a>
+      </nav>
+    </div>
+  </section>
+
+<div><button type="button" class = "button" onclick="forward()">Forward</button></div>
+<div><button type="button" class = "buttonLeft" onclick="left()">Left</button>
+<button type="button" class = "buttonLeft" onclick="stop()">Stop</button>
+<button type="button" class = "buttonLeft" onclick="right()">Right</button>
+</div>
+<div><button type="button" class = "button" onclick="backward()">Backward</button>
+</div>
+
+
+
+<p id = "pOne">Approx 2s delay after button press</p>
+
+<p id="timer"></p>
+
+<script>
+function forward() {
+var xhttp = new XMLHttpRequest();
+//posts from rebecca to jessica
+xhttp.open("POST", "http://ee31.ece.tufts.edu/BA097D0A46F9/D9EDBC851B1E", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("dir=1"); //message to post
+timeIt();
+}
+function backward() {
+var xhttp = new XMLHttpRequest();
+//posts from rebecca to jessica
+xhttp.open("POST", "http://ee31.ece.tufts.edu/BA097D0A46F9/D9EDBC851B1E", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("dir=2"); //message to post
+timeIt();
+}
+function left() {
+var xhttp = new XMLHttpRequest();
+//posts from rebecca to jessica
+xhttp.open("POST", "http://ee31.ece.tufts.edu/BA097D0A46F9/D9EDBC851B1E", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("dir=3"); //message to post
+timeIt();
+}
+function right() {
+var xhttp = new XMLHttpRequest();
+//posts from rebecca to jessica
+xhttp.open("POST", "http://ee31.ece.tufts.edu/BA097D0A46F9/D9EDBC851B1E", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("dir=4"); //message to post
+timeIt();
+}
+function stop() {
+var xhttp = new XMLHttpRequest();
+//posts from rebecca to jessica
+xhttp.open("POST", "http://ee31.ece.tufts.edu/BA097D0A46F9/D9EDBC851B1E", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("dir=0"); //message to post
+timeIt();
+}
+
+function timeIt() {
+var timeleft = 2;
+var downloadTimer = setInterval(function(){
+if(timeleft <= 0){
+clearInterval(downloadTimer);
+document.getElementById("timer").innerHTML = "Finished";
+} else {
+document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+}
+timeleft -= 1;
+}, 1000);
+}
+</script>
+
+</body>
+</html>

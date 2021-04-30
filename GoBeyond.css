@@ -1,0 +1,202 @@
+body{
+	background-color: black;
+}
+h2{
+	color:white; 
+	font-family: Helvetica; 
+	font-weight: 250;
+	text-align: center;
+	font-size: 300%; 
+	margin-bottom: 30px;
+}
+p {
+	color: white;
+	text-align: center;
+}
+.timer {
+	color: white;
+	font-family: Helvetica; 
+	text-align: center;
+}
+.button {
+  background-color: #483D8B;
+  font-family: Helvetica;
+  border: none;
+  border-radius: 500px;
+  color: white;
+  width: 20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 5%;
+  cursor: pointer;
+
+}
+.button:hover {
+	background-color: white;
+	color: #483D8B
+}
+.button:focus {
+	background-color: grey;
+	color: #483D8B
+}
+
+.buttonLeft {
+  background-color: #483D8B;
+  font-family: Helvetica;
+  border: none;
+  border-radius: 500px;
+  color: white;
+  width: 20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 9.8%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+.buttonLeft:hover {
+	background-color: white;
+	color: #483D8B
+}
+.buttonLeft:focus {
+	background-color: grey;
+	color: #483D8B
+}
+
+.center {
+  margin: auto;
+  width: 80%;
+  border: 1px solid skyblue; 
+  border-radius: 10px;
+  position:relative; 
+  top:100px;
+  padding: 10px 5% 10px 15%;
+}
+nav{
+	font-family: Helvetica; 
+	font-weight: lighter; 
+	background: #2F4F4F; 
+	border-width: thin;
+	-webkit-border-radius: 20px;
+	width: 33%;
+	padding-left: 25px;
+	margin-left: 33%;
+	margin-right: 33%; 
+	margin-bottom: 5%;
+
+
+}
+.navLinks{
+	text-decoration: none; 
+	display: inline-block;
+	margin: 15px; 
+	margin-left: 10%;
+	margin-right: 1%;
+	color: white;
+
+}
+
+.navLinks:hover{
+	text-decoration: none; 
+	display: inline-block;
+	margin: 15px; 
+	margin-left: 8%;
+	color: grey;
+}
+
+.home {
+	text-decoration: none; 
+	display: inline-block;
+	color: white;
+}
+
+#pOne{
+	text-align: center; 
+	display: block;
+	height: 5%; 
+	width:40%;
+	margin-left: 30%; 
+	margin-top: 5px; 
+	margin-bottom: 2%;
+	overflow: auto;
+	background-color: #000000;
+	font-size: 120%;
+	font-weight: 150;
+	font-family: Helvetica; 
+	text-align: center;
+	color: grey;
+	padding: 5, 5, 6, 7;
+
+}
+.divMid{
+	position: absolute;
+	left: 25%;
+
+}
+
+.lineButton {
+  background-color: #483D8B;
+  font-family: Helvetica;
+  border: none;
+  border-radius: 500px;
+  color: white;
+  width: 20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 0%;
+  margin-top: 2.5%;
+  cursor: pointer;
+	
+	
+
+}
+
+.disable {
+  background-color: #483D8B;
+  font-family: Helvetica;
+  border: none;
+  border-radius: 500px;
+  color: white;
+  width: 20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  cursor: pointer;
+	
+	
+
+}
+.lineButton:hover {
+	background-color: white;
+	color: #483D8B
+}
+.lineButton:focus {
+	background-color: grey;
+	color: #483D8B
+}
+.disable:hover {
+	background-color: white;
+	color: #483D8B
+}
+.disable:focus {
+	background-color: grey;
+	color: #483D8B
+}
